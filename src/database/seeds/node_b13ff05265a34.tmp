@@ -1,0 +1,34 @@
+const seeder = require("mongoose-seed")
+
+seeder.connect("mongodb://localhost/MongoCRUD", () => {
+    seeder.loadModels([
+        "src/database/models/UserModel.ts"
+    ])
+    seeder.clearModels(["users"])
+    seeder.populateModels(data, function(error, done) {
+        if (error) {
+            return console.log(error)
+        }
+        if (done) {
+            return console.log(done)
+        }
+        seeder.disconnect()
+    })
+    
+})
+
+const data = [
+    {
+        "model": "users",
+        "documents": [
+            {
+                "name": "Rafael",
+                "email": "rafael@gmail.com"
+            },
+            {
+                "name": "Zack",
+                "email": "zack@gmail.com"
+            }
+        ]
+    }
+]
