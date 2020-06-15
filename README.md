@@ -11,4 +11,4 @@
 ## Como rodar:
 #### Na pasta dos arquivos rode:
 - yarn install ou npm install
-- yarn dev
+- yarn dev ou npm run dev
